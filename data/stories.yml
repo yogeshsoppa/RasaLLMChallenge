@@ -28,3 +28,28 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: Respond Pizza Order
+  steps:
+  - intent: pizza_order
+  - action: utter_pizza_order
+
+- story: Respond Pizza What
+  steps:
+  - intent: pizza_what
+  - action: utter_pizza_what
+
+- story: Respond Pizza Disambig
+  steps:
+  - intent: pizza_disambig
+  - action: utter_pizza_disambig
+
+- story: Respond Pizza Not Want
+  steps:
+  - intent: pizza_not_want
+  - action: utter_pizza_not_want
+
+- story: Respond Language Inquiry
+  steps:
+  - intent: language_inquiry
+  - action: utter_language_inquiry
