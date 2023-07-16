@@ -89,3 +89,67 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: pizza_make
+  examples: |
+    - make a pizza
+    - cook a pizza
+    - prepare a pizza
+    - I want to make a pizza
+    - pizza recipe
+    - recipe for pizza
+    - I want to make a [pepperoni](topping) pizza
+    - make a [cheese](topping) pizza
+
+- intent: pizza_order
+  examples: |
+    - order pizza
+    - I want to order a pizza
+    - I would like to order pizza
+    - I'd like to order pizza 
+    - How can I order some pizza?
+    - I'd like to place a pizza order
+
+- intent: pizza_what
+  examples: |
+    - What is pizza?
+    - What's pizza?
+    - Pizza is what?
+    - Explain pizza to me
+    - Tell me about pizza
+
+- intent: pizza_disambig
+  examples: |
+    - pizza
+    - pizzas
+    - pizza's
+
+- intent: pizza_not_want
+  examples: |
+    - I do not want to order pizza
+    - I don't want to order pizza 
+    - I do not want to make pizza
+    - I don't want to make pizza
+
+- intent: language_inquiry
+  examples: |
+    - What languages do you know?
+    - What language do you speak?
+    - Do you speak English?
+    - Do you speak Kannada?
+    - Do you speak Marathi?
+
+- lookup: topping
+  examples: |
+    - pepperoni
+    - cheese
+    - mushroom
+    - broccoli
+    - onion
+    - pepper
+    - potato
+    - chicken 
+
+- synonym: pizza
+  examples: |
+    - pizzas 

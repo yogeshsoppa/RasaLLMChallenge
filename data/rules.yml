@@ -11,3 +11,23 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: Activate Pizza Make Form
+  steps:
+    - intent: pizza_make 
+    - action: pizza_make_form
+    - active_loop: pizza_make_form
+
+- rule: Submit Pizza Make Form
+  condition:
+  # Condition that form is active.
+  - active_loop: pizza_make_form
+  steps:
+  # Form is deactivated
+  - action: pizza_make_form
+  - active_loop: null
+  #- slot_was_set:
+    #- requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: utter_submit
+  - action: utter_slot_values
