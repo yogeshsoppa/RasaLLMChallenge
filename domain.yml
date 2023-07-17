@@ -85,6 +85,9 @@ responses:
   utter_language_inquiry:
   - text: "I know English, Kannada, and Marathi."
 
+actions:
+  -  action_default_fallback
+
 forms: 
   pizza_make_form:
     required_slots:

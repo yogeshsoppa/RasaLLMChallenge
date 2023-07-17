@@ -1,0 +1,6 @@
+[
+  {
+    "name": "topping",
+    "pattern": "(\\bpepperoni\\b|\\bcheese\\b|\\bmushroom\\b|\\bbroccoli\\b|\\bonion\\b|\\bpepper\\b|\\bpotato\\b|\\bchicken\\b)"
+  }
+]

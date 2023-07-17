@@ -53,3 +53,8 @@ stories:
   steps:
   - intent: language_inquiry
   - action: utter_language_inquiry
+
+- story: fallback
+  steps:
+  - intent: nlu_fallback
+  - action: action_default_fallback
