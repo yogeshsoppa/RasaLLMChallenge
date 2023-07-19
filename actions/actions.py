@@ -26,8 +26,6 @@ class ActionDefaultFallback(Action):
 
         
         last_message = tracker.latest_message.get("text", "")
-        
-        #openai_response = RequestOpenAI.Request(last_message)
 
         openai_response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
@@ -40,4 +38,3 @@ class ActionDefaultFallback(Action):
         # Revert user message which led to fallback.
 
         return
-
