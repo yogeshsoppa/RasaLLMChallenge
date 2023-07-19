@@ -2,37 +2,20 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: greet 
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
 
 - story: Respond Pizza Order
   steps:
   - intent: pizza_order
   - action: utter_pizza_order
+
+- story: Respond Pizza Order
+  steps:
+  - intent: pizza_make
+  - action: utter_pizza_make
 
 - story: Respond Pizza What
   steps:
@@ -53,3 +36,13 @@ stories:
   steps:
   - intent: language_inquiry
   - action: utter_language_inquiry
+
+- story: fallback
+  steps:
+  - intent: nlu_fallback
+  - action: action_default_fallback
+
+- story: apologize
+  steps:
+  - intent: apologize
+  - action: utter_sorry

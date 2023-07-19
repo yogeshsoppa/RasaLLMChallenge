@@ -9,15 +9,10 @@ intents:
       use_entities: []
   - deny:
        use_entities: []
-  - mood_great:
-      use_entities: []
-  - mood_unhappy:
-      use_entities: []
   - bot_challenge:
       use_entities: []
   - pizza_make:
-      use_entities: 
-        - topping
+      use_entities: []
   - pizza_order:
       use_entities: []
   - pizza_what:
@@ -28,17 +23,11 @@ intents:
       use_entities: []
   - language_inquiry:
       use_entities: []
+  - apologize:
+      use_entities: []
+  - nlu_fallback:
+      use_entities: []
 
-entities:
-  - topping
-
-slots:
-  topping:
-    type: text
-    influence_conversation: true
-    mappings:
-    - type: from_entity
-      entity: topping
 
 responses:
   utter_greet:
@@ -60,20 +49,17 @@ responses:
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
 
-  utter_submit:
-  - text: "All done!"
+  utter_sorry:
+  - text: "I'm sorry. I only know about pizza."
 
-  utter_slot_values:
-  - text: "I see you want a {topping} pizza."
-
-  utter_ask_topping:
-  - text: "What toppings?"
+  utter_pizza_make:
+  - text: "Let's make some pizza. We need the ingredients first."
 
   utter_pizza_order:
   - text: "You can order pizza at your local pizza shop :) "
 
   utter_pizza_what:
-  - text: "Pizza a delicious food with origins in Italy. Read more on the wikipedia article"
+  - text: "Pizza a delicious food with origins in Italy. Read more on the Wikipedia article."
 
   utter_pizza_disambig:
   - text: "I see you're asking about pizza"
@@ -83,12 +69,12 @@ responses:
   - text: "If you don't want pizza, you can try another food, like pani puri! :) "
 
   utter_language_inquiry:
-  - text: "I know English, Kannada, and Marathi."
+  - text: "I know English. Soon I will know Kannada, Marathi, and Spanish as well."
 
-forms: 
-  pizza_make_form:
-    required_slots:
-      - topping
+
+actions:
+  -  action_default_fallback
+
 
 session_config:
   session_expiration_time: 60
