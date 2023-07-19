@@ -9,17 +9,6 @@ import openai
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-class RequestOpenAI():
-    @staticmethod
-    def Ask(question) -> Text:
-        return openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[{"role": "user", "content": "Find a way to rephrase: I don't know about" + question + "but I can tell you about pizza"}],
-            max_tokens=200,
-            temperature=0,
-        )["choices"][0]["message"]["content"]
-
-
 class ActionDefaultFallback(Action):
 
     """Executes the fallback action and goes back to the previous state
@@ -38,10 +27,17 @@ class ActionDefaultFallback(Action):
         
         last_message = tracker.latest_message.get("text", "")
         
-        description = RequestOpenAI.Ask(last_message)
+        #openai_response = RequestOpenAI.Request(last_message)
 
-        dispatcher.utter_message(text=f"That's out of my scope. {description}")
+        openai_response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": "Find a way to rephrase: I don't know about" + last_message + "but I can tell you about pizza"}],
+            max_tokens=200,
+            temperature=0,
+        )["choices"][0]["message"]["content"]
+
+        dispatcher.utter_message(text=f"That's out of my scope. {openai_response}")
         # Revert user message which led to fallback.
 
-        return 
+        return
 
