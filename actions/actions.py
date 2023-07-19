@@ -17,7 +17,7 @@ class RequestOpenAI():
             messages=[{"role": "user", "content": "Find a way to rephrase: I don't know about" + question + "but I can tell you about pizza"}],
             max_tokens=200,
             temperature=0,
-        )["choices"][0]["message"]["content"
+        )["choices"][0]["message"]["content"]
 
 
 class ActionDefaultFallback(Action):
