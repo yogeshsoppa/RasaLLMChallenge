@@ -7,19 +7,19 @@ nlu:
     - hello
     - hi
     - hello there
+    - howdy
+    - good day
+    - g'day
     - good morning
     - good evening
-    - moin
     - hey there
     - let's go
-    - hey dude
     - goodmorning
     - goodevening
     - good afternoon
 
 - intent: goodbye
   examples: |
-    - cu
     - good by
     - cee you later
     - good night
@@ -33,7 +33,6 @@ nlu:
 - intent: affirm
   examples: |
     - yes
-    - y
     - indeed
     - of course
     - that sounds good
@@ -42,46 +41,11 @@ nlu:
 - intent: deny
   examples: |
     - no
-    - n
     - never
     - I don't think so
     - don't like that
     - no way
     - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
 
 - intent: bot_challenge
   examples: |
@@ -93,6 +57,7 @@ nlu:
 - intent: pizza_make
   examples: |
     - make a pizza
+    - make me pizza
     - cook a pizza
     - prepare a pizza
     - I want to make a pizza
@@ -109,6 +74,8 @@ nlu:
     - I'd like to order pizza 
     - How can I order some pizza?
     - I'd like to place a pizza order
+    - buy some pizza
+    - purchase a pizza slice
 
 - intent: pizza_what
   examples: |
@@ -117,19 +84,36 @@ nlu:
     - Pizza is what?
     - Explain pizza to me
     - Tell me about pizza
+    - Tell me what pizza is
+    - Pizza description
+    - Describe pizza to me
 
 - intent: pizza_disambig
   examples: |
     - pizza
     - pizzas
     - pizza's
+    - hi pizza
+    - hello pizza
+    - pizza please
+    - I want pizza
+    - I love pizza
+    - I like pizza 
+    - need pizza
 
 - intent: pizza_not_want
   examples: |
-    - I do not want to order pizza
     - I don't want to order pizza 
     - I do not want to make pizza
-    - I don't want to make pizza
+    - I don't want to make pizza 
+    - I am not wanting pizza 
+    - I dislike pizza 
+    - don't order pizza
+    - I do not want to order a pizza
+    - I would not like to order pizza
+    - I wouldn't like to place a pizza order
+    - don't buy some pizza
+    - not wanting to purchase a pizza slice
 
 - intent: language_inquiry
   examples: |
@@ -138,18 +122,20 @@ nlu:
     - Do you speak English?
     - Do you speak Kannada?
     - Do you speak Marathi?
+    - Is English a language spoken by you
+    - Can you speak Spanish?
 
-- lookup: topping
+- intent: apologize
   examples: |
-    - pepperoni
-    - cheese
-    - mushroom
-    - broccoli
-    - onion
-    - pepper
-    - potato
-    - chicken 
+    - murder
+    - hurt
+    - kill
+    - killing
+    - death
+    - die
+    - suicide
 
 - synonym: pizza
   examples: |
     - pizzas 
+    - pizzza
